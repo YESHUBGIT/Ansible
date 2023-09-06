@@ -23,7 +23,7 @@
         url: "https://awx.example.com/api/v2/job_templates/{{ job_template_id }}/launch/"
         method: POST
         headers:
-          Authorization: "Bearer YOUR_AWX_API_TOKEN"
+          Authorization: "Bearer 5w0ae9QtqueJijrTyYMvsGJ3iztat6"
         status_code: 202
         return_content: yes
       register: job_run
