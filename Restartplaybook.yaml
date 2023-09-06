@@ -7,7 +7,7 @@
       uri:
         url: "http://52.139.185.126:30000/#/jobs{{ previous_job_id }}/"
         headers:
-          Authorization: "Bearer YOUR_AWX_API_TOKEN"
+          Authorization: "Bearer 5w0ae9QtqueJijrTyYMvsGJ3iztat6"
         return_content: yes
       register: job_status
 
