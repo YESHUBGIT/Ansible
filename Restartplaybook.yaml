@@ -20,7 +20,7 @@
 
     - name: Rerun Failed Job
       uri:
-        url: "https://awx.example.com/api/v2/job_templates/{{ job_template_id }}/launch/"
+        url: "http://52.139.185.126:30000/#/templates/job_template/{{ job_template_id }}/launch/"
         method: POST
         headers:
           Authorization: "Bearer 5w0ae9QtqueJijrTyYMvsGJ3iztat6"
