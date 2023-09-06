@@ -1,0 +1,29 @@
+---
+- name: Retry Failed Job
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Get Job Status
+      uri:
+        url: "http://52.139.185.126:30000/#/jobs{{ previous_job_id }}/"
+        headers:
+          Authorization: "Bearer YOUR_AWX_API_TOKEN"
+        return_content: yes
+      register: job_status
+
+    - name: Check Job Status
+      assert:
+        that:
+          - "failed" in job_status.json.results[0].status
+        fail_msg: "The previous job was successful, no need to retry."
+      ignore_errors: yes
+
+    - name: Rerun Failed Job
+      uri:
+        url: "https://awx.example.com/api/v2/job_templates/{{ job_template_id }}/launch/"
+        method: POST
+        headers:
+          Authorization: "Bearer YOUR_AWX_API_TOKEN"
+        status_code: 202
+        return_content: yes
+      register: job_run
