@@ -5,10 +5,10 @@
   tasks:   
     - name: Rerun Failed Job
       uri:
-        url: "http://52.139.185.126:30000/#/templates/job_template/10/launch/"
+        url: "http://localhost:32344/#/templates/job_template/9/launch/"
         method: POST
         headers:
-          Authorization: "Bearer 5w0ae9QtqueJijrTyYMvsGJ3iztat6"
+          Authorization: "Bearer O17fjPqHArwkjZwI94BCj9SPsV4qRM"
         status_code: 202
         return_content: yes
       register: job_run
