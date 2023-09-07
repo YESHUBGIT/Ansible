@@ -8,4 +8,4 @@
       register: job_result
     - name: Wait for Some Time
       pause:
-        seconds: 10 
+        seconds: 30 
