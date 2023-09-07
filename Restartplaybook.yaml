@@ -8,7 +8,7 @@
         url: "http://localhost:32344/#/templates/job_template/9/launch/"
         method: POST
         headers:
-          Authorization: "Bearer O17fjPqHArwkjZwI94BCj9SPsV4qRM"
+          Authorization: "Bearer 7SZICK2xLytyEb1AzqNl0gq0PuVMxm"
         status_code: 202
         return_content: yes
       register: job_run
