@@ -6,9 +6,3 @@
       debug:
         msg: "Hello, World!"
       register: job_result
-
-- name: Capture Previous Job ID
-  hosts: localhost
-  gather_facts: false
-  set_fact:
-    previous_job_id: "{{ job_result.id }}"
