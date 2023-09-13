@@ -14,3 +14,6 @@
       register: job_run
 Write_token: T7zM6nqO46O3D5oRP2G8IEKOYIst6p
 Read_token: hZErlZIgGJyulYSJBwnfnpDQBwFxo6
+curl -k -H "Content-Type: application/json" -H "Authorization: Bearer hZErlZIgGJyulYSJBwnfnpDQBwFxo6" http://18.234.74.223:30321/api/v2/metrics/
+curl -k -H "Content-Type: application/json" -H "Authorization: Bearer hZErlZIgGJyulYSJBwnfnpDQBwFxo6" http://18.234.74.223:30321/api/v2/jobs/2/job_events/
+
