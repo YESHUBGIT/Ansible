@@ -1,0 +1,23 @@
+---
+- name: Hello World Play
+  hosts: localhost
+  tasks:
+    - name: Run Hello World
+      command: echo "Hello, World!"
+      register: hello_result
+
+- name: Pass Information to Next Play
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Debug Registered Variables
+      debug:
+        var: 
+          - hello_result
+          - ansible_job_id
+          - ansible_job_is_failed
+
+    - name: Run Only on Failure
+      debug:
+        msg: "The previous job failed. Status: {{ ansible_job_is_failed }}, Executor: {{ ansible_play_hosts }} on {{ ansible_play_batch_name }}, Job ID: {{ ansible_job_id }}"
+      when: ansible_job_is_failed
