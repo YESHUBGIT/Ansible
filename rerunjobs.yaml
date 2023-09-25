@@ -18,5 +18,5 @@
 
     - name: Run Only on Success
       debug:
-        msg: "The previous job succeeded. Status: Success, Executor: {{ ansible_play_hosts }} on {{ ansible_play_batch_name }}, Job ID: {{ ansible_job_id }}"
+        msg: "The previous job succeeded. Status: Success, Executor: {{ ansible_play_hosts }}, Job ID: {{ ansible_job_id }}"
       when: hello_result.rc == 0
