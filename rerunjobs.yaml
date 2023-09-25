@@ -1,6 +1,5 @@
 ---
 - name: Hello World Play
-  hosts: localhost
   tasks:
     - name: Run Hello World
       command: echo "Hello, World!"
