@@ -1,8 +1,15 @@
 ---
-- hosts: localhost
-  gather_facts: no
-
-  tasks:         
-    - name: "Output current job ID"
+- hosts: node2
+  tasks:
+    - name: Get Previous Job ID
       debug:
-        msg: "Current Job ID: {{ current_job_id }}"
+        msg: "The previous job ID is {{ hostvars['node1']['ansible_facts']['job_id'] }}"
+
+    - name: Compose URL
+      set_fact:
+        job_url: "http://3.145.88.99:31027/api/v2/jobs/{{ hostvars['node1']['ansible_facts']['job_id'] }}"
+      register: url_result
+
+    - name: Display Job URL
+      debug:
+        msg: "The job URL is {{ url_result.stdout }}"
