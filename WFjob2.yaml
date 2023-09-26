@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  tasks:         
+    - name: "Output current job ID"
+      debug:
+        msg: "Current Job ID: {{ current_job_id }}"
