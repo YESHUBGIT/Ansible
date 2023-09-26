@@ -1,5 +1,5 @@
 ---
-- hosts: node2
+- hosts: localhost
   tasks:
     - name: Get Previous Job ID
       debug:
