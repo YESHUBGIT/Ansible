@@ -1,0 +1,11 @@
+---
+- name: Check status of the executor
+hosts: executor
+tasks:
+- command: service httpd status
+- mail:
+to: admin@company.com
+subject: Service Alert
+body: Httpd Service is down
+register: result
+when: result.stdout.find('down') != -
