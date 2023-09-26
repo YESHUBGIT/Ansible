@@ -6,4 +6,4 @@
     - name: "Register current job ID"
       set_stats:
         data:
-          node1_job_id: "{{ ansible_job_id }}"
+          node1_job_id: "{{ awx_job_id }}"
