@@ -5,17 +5,9 @@
       command: echo "Hello, World!"
       register: hello_result
 
-- name: Pass Information to Next Play
+- name: Print the register
   hosts: localhost
   gather_facts: no
   tasks:
     - name: Debug Registered Variables
-      debug:
-        var: 
-          - hello_result
-          - ansible_job_id
-
-    - name: Run Only on Success
-      debug:
-        msg: "The previous job succeeded. Status: Success, Executor: {{ ansible_play_hosts }}, Job ID: {{ ansible_job_id }}"
-      when: hello_result.rc == 0
+      command: echo hello_result
