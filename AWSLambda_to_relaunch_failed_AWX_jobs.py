@@ -70,7 +70,7 @@ def lambda_handler(event, context):
                     else:
                         return {
                             'statusCode': 201,
-                            'body': 'Execution node not found'
+                            'body': 'Execution node IP not found'
                         }                        
                 else:
                     return {
